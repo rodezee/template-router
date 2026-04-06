@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Template Router</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="color-scheme" content="light dark">
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico">
+    <script type="module" src="/template-router.js"></script>
+  </head>
+  <body>
+    <template-router>
+      <template id="routes">
+        <template path="/" title="Home">
+          Homepage ...
+        </template>
+        <template path="/:name" title="Hello World">
+          Hello {name}
+        </template>
+        <template path="/dashboard/:firstname/:lastname" title="Dashboard">
+          This is the dashboard | .. | {firstname} {lastname}
+        </template>
+      </template>
+
+      <template id="layout">
+        <header class="container">
+          <nav>
+            <ul><li><strong>{title}</strong></li></ul>
+            <ul>
+              <li><a href="/">Home</a></li>
+              <li><a href="/world">Hello World</a></li>
+              <li><a href="/dashboard/John/Doe">Dashboard</a></li>
+            </ul>
+          </nav>
+        </header>
+        
+        <main class="container">
+          {content}
+        </main>
+
+        <footer class="container">
+          <small>Built with Template Router</small>
+        </footer>
+      </template>
+    </template-router>
+  </body>
+</html>
