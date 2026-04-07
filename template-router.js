@@ -95,12 +95,12 @@ class TemplateRouter extends HTMLElement {
 
         // Copy attributes (like src if you use it)
         Array.from(oldScript.attributes).forEach(attr => 
-        newScript.setAttribute(attr.name, attr.value)
+          newScript.setAttribute(attr.name, attr.value)
         );
 
         // THE MAGIC: Wrap the code in an IIFE automatically
         const wrappedCode = `(function() { 
-        ${oldScript.innerHTML} 
+          ${oldScript.innerHTML} 
         })();`;
 
         newScript.appendChild(document.createTextNode(wrappedCode));
