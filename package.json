@@ -1,0 +1,25 @@
+{
+  "name": "template-router",
+  "version": "1.0.0",
+  "description": "A lightweight, zero-dependency, declarative SPA (Single Page Application) router, configured by HTML templates.",
+  "main": "template-router.js",
+  "scripts": {
+    "test": "true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodezee/template-router.git"
+  },
+  "keywords": [
+    "router",
+    "template",
+    "html",
+    "zeroscript"
+  ],
+  "author": "biensurerodezee@protonmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rodezee/template-router/issues"
+  },
+  "homepage": "https://github.com/rodezee/template-router#readme"
+}

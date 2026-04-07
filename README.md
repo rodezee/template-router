@@ -24,6 +24,14 @@ No build steps. No `npm install`. No complex JavaScript configuration. Just pure
 
 ----------
 
+## 🚀 CDN
+
+simply include this in your index.html and you are ready to go!
+
+```
+<script type="module" src="https://esm.sh/gh/rodezee/template-router"></script>
+```
+
 ## 📦 Quick Start
 
 ### 1. Create your `index.html`
@@ -33,11 +41,11 @@ No build steps. No `npm install`. No complex JavaScript configuration. Just pure
 <html lang="en">
   <head>
     <title>My App</title>
-    <script type="module" src="/template-router.js"></script>
+    <script type="module" src="https://esm.sh/gh/rodezee/template-router"></script>
   </head>
   <body>
     <template-router>
-      <template id="routes">
+      <template id="tr-routes">
         <template path="/" title="Home">
           <h1>Welcome Home</h1>
         </template>
@@ -47,7 +55,7 @@ No build steps. No `npm install`. No complex JavaScript configuration. Just pure
         </template>
       </template>
 
-      <template id="layout">
+      <template id="tr-layout">
         <nav>
           <a href="/">Home</a>
           <a href="/hello/World">Say Hi</a>

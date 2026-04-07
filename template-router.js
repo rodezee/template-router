@@ -31,10 +31,10 @@ class TemplateRouter extends HTMLElement {
   init() {
     const parser = new DOMParser();
     const doc = parser.parseFromString(this._initialContent, 'text/html');
-    const layoutTmpl = doc.querySelector('template#layout');
+    const layoutTmpl = doc.querySelector('template#tr-layout');
     this.layout = layoutTmpl ? layoutTmpl.innerHTML : "{{ content }}";
 
-    const routesTmpl = doc.querySelector('template#routes');
+    const routesTmpl = doc.querySelector('template#tr-routes');
     if (routesTmpl) {
       this.routes = Array.from(routesTmpl.content.querySelectorAll('template[path]')).map(tmpl => ({
         path: tmpl.getAttribute('path'),
