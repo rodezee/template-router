@@ -16,13 +16,15 @@ class TemplateRouter extends HTMLElement {
     
     this.addEventListener("click", (e) => {
       const link = e.target.closest("a");
-      // Only intercept internal relative links
-      if (link && link.getAttribute("href")?.startsWith("/")) {
-        e.preventDefault();
-        const url = link.getAttribute("href");
-        if (window.location.pathname !== url) {
-          history.pushState(null, "", url);
-          this.render();
+      if (link && link.href) {
+        const url = new URL(link.href);
+        // Only intercept if it's the same domain
+        if (url.origin === window.location.origin) {
+          e.preventDefault();
+          if (window.location.pathname !== url.pathname) {
+            history.pushState(null, "", url.pathname);
+            this.render();
+          }
         }
       }
     });
@@ -59,8 +61,10 @@ class TemplateRouter extends HTMLElement {
   }
 
   interpolate(str, params) {
-    return str.replace(/{(\w+)}/g, (match, key) => {
-      return params[key] !== undefined ? params[key] : match;
+    return str.replace(/{(\w+)}/g, (original, key) => {
+      // If the key exists in our params (even if it's empty string or 0), use it.
+      // Otherwise, return the original {key} string so it doesn't break code blocks.
+      return Object.hasOwn(params, key) ? params[key] : original;
     });
   }
 
