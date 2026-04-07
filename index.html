@@ -74,6 +74,28 @@
             </tbody>
           </table>
         </template>
+        <template path="/counter" title="Counter">
+          <article>
+            <header>Local Template State</header>
+            <p>Count: <strong id="count-display">0</strong></p>
+            <button id="inc-btn">Increment</button>
+          </article>
+
+          <script>
+            // Initialize global state if it doesn't exist
+            var count = 0;
+            
+            // Update the UI immediately on load
+            const display = document.getElementById('count-display');
+            const btn = document.getElementById('inc-btn');
+            display.textContent = count;
+
+            btn.onclick = () => {
+              count++;
+              display.textContent = count;
+            };
+          </script>
+        </template>
       </template>
 
       <template id="tr-layout">
@@ -84,6 +106,7 @@
               <li><a href="/">Home</a></li>
               <li><a href="/users">Users</a></li>
               <li><a href="/hello/Visitor">Say Hello</a></li>
+              <li><a href="/counter">Counter</a></li>
               <li><a href="https://github.com/rodezee/template-router">Github</a></li>
             </ul>
           </nav>

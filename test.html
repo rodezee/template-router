@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>My App</title>
+    <script type="module" src="https://esm.sh/gh/rodezee/template-router"></script>
+  </head>
+  <body>
+    <template-router>
+      <template id="tr-routes">
+        <template path="/" title="Home">
+          <h1>Welcome Home</h1>
+        </template>
+        
+        <template path="/hello/:name" title="Greeting">
+          <h1>Hello, {{ name }}!</h1>
+        </template>
+      </template>
+
+      <template id="tr-layout">
+        <nav>
+          <a href="/">Home</a>
+          <a href="/hello/World">Say Hi</a>
+        </nav>
+        <main>
+          {{ content }}
+        </main>
+      </template>
+    </template-router>
+  </body>
+</html>
