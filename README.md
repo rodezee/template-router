@@ -26,9 +26,9 @@ No build steps. No `npm install`. No complex JavaScript configuration. Just pure
 
 ## 🚀 CDN
 
-simply include this in your index.html and you are ready to go!
+Simply include this in your index.html and you are ready to go!
 
-```
+```html
 <script type="module" src="https://esm.sh/gh/rodezee/template-router"></script>
 ```
 
@@ -70,9 +70,9 @@ simply include this in your index.html and you are ready to go!
 
 ```
 
-### 2. Add `template-router.js`
+### 2. No CDN then add `template-router.js`
 
-Copy the source code into a file named `template-router.js`. The router will automatically initialize when the `<template-router>` tag is parsed.
+If you don't want to use the CDN method, you can copy the source code into a file named `template-router.js`. The router will automatically initialize when the `<template-router>` tag is parsed.
 
 ----------
 
